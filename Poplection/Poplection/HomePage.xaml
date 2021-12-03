@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Poplection.HomePage"
+             xmlns:local="clr-namespace:Poplection">
+  <!--Pages can be added as references or inline-->
+    <local:MyCollection Title="My Collection"/>
+    <local:Stores Title="Stores"/>
+    <local:Sets Title="Sets"/> 
+    <local:MyOrders Title="My Orders"/>
+    <local:Friends Title="Friends"/>
+
+    <TabbedPage.ToolbarItems>
+        <ToolbarItem Name="AccountToolbarItem" Order="Primary" Text="Username" Priority="4" Clicked="AccountToolbarItem_Clicked"/>
+    </TabbedPage.ToolbarItems>
+    
+    
+</TabbedPage>

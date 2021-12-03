@@ -1,22 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace Poplection
 {
-    public partial class MainPage : ContentPage
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class RegisterPage : ContentPage
     {
-        public MainPage()
+        public RegisterPage()
         {
             InitializeComponent();
         }
 
-
-        private void LoginButton_Clicked(object sender, EventArgs e)
+        private void RegisterButton_Clicked(object sender, EventArgs e)
         {
             bool isUsernameEmpty = string.IsNullOrEmpty(UsernameInput.Text);
             bool isPasswordEmpty = string.IsNullOrEmpty(PasswordInput.Text);
@@ -27,15 +28,8 @@ namespace Poplection
             }
             else
             {
-                Navigation.PushAsync(new HomePage());
+                Navigation.PushAsync(new MainPage());
             }
         }
-
-        private void RegisterButton_Clicked(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new RegisterPage());
-            
-        }
-
     }
 }
