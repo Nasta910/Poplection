@@ -19,7 +19,7 @@ namespace Poplection
 
         private void AccountToolbarItem_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new AccountPage());
+            Navigation.PushAsync(new MyAccount());
 
         }
     }

@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace Poplection
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class AccountPage : ContentPage
+    public partial class Home : ContentPage
     {
-        public AccountPage()
+        public Home()
         {
             InitializeComponent();
         }

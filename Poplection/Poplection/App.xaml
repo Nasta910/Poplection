@@ -4,9 +4,11 @@
              x:Class="Poplection.App">
     <Application.Resources>
         <ResourceDictionary>
+            <Color x:Key="Primary">#8B4BFF</Color>
+            <Color x:Key="FontColorWhite">#fff</Color>
             <Style TargetType="NavigationPage">
-                <Setter Property="BarBackgroundColor" Value="#d7c1ff"/>
-                <Setter Property="BarTextColor" Value="White"/>
+                <Setter Property="BarBackgroundColor" Value="{StaticResource Primary}"/>
+                <Setter Property="BarTextColor" Value="{StaticResource FontColorWhite}"/>
             </Style>
         </ResourceDictionary>
     </Application.Resources>

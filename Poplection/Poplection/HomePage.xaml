@@ -2,8 +2,11 @@
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Poplection.HomePage"
-             xmlns:local="clr-namespace:Poplection">
+             xmlns:local="clr-namespace:Poplection"
+             BarBackgroundColor="{StaticResource Primary}"
+            BarTextColor="{StaticResource FontColorWhite}">
   <!--Pages can be added as references or inline-->
+    <local:Home Title="Home"/>
     <local:MyCollection Title="My Collection"/>
     <local:Stores Title="Stores"/>
     <local:Sets Title="Sets"/> 
@@ -13,6 +16,7 @@
     <TabbedPage.ToolbarItems>
         <ToolbarItem Name="AccountToolbarItem" Order="Primary" Text="Username" Priority="4" Clicked="AccountToolbarItem_Clicked"/>
     </TabbedPage.ToolbarItems>
-    
+
     
 </TabbedPage>
+

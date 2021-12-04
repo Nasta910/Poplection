@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Poplection.Home">
+    <ContentPage.Content>
+        <Grid Margin="10" RowSpacing="0" ColumnSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="300"/>
+                <RowDefinition Height="300"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackLayout Grid.Column="0" Grid.Row="0" BackgroundColor="#8B4BFF" Margin="0,60,0,40">
+                <Button HorizontalOptions="FillAndExpand" Text="NewsPart" x:Name="NewsButton" BackgroundColor="#8B4BFF" TextColor="#ffff" VerticalOptions="FillAndExpand"/>
+            </StackLayout>
+
+            <StackLayout Grid.Column="0" Grid.Row="1" BackgroundColor="#8B4BFF" Margin="0,60,0,40" >
+                <Button HorizontalOptions="FillAndExpand" Text="UpcommingPopsPart" x:Name="UpcommingPopsButton" BackgroundColor="#8B4BFF" TextColor="#ffff" VerticalOptions="FillAndExpand"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
