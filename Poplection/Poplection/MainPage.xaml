@@ -5,8 +5,8 @@
              NavigationPage.HasNavigationBar="False">
 
     <StackLayout>
-        <Frame BackgroundColor="#8B4BFF" Padding="24" CornerRadius="0">
-            <Label Text="Poplection" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        <Frame BackgroundColor="{StaticResource Primary}" Padding="24" CornerRadius="0">
+            <Label Text="Poplection" HorizontalTextAlignment="Center" TextColor="{StaticResource FontColorWhite}" FontSize="36"/>
         </Frame>
 
         <StackLayout HorizontalOptions="Center">
@@ -15,8 +15,8 @@
             <Entry x:Name="UsernameInput" Placeholder="Your username here"/>
             <Label x:Name="PasswordLabel" Text="Password:"/>
             <Entry x:Name="PasswordInput" Placeholder="Your Password here" IsPassword="true"/>
-            <Button x:Name="LoginButton" Text="Login" BackgroundColor="#8B4BFF" TextColor="White" Clicked="LoginButton_Clicked"/>
-            <Button x:Name="RegisterButton" Text="Register" BackgroundColor="#8B4BFF" TextColor="White" Clicked="RegisterButton_Clicked"/>
+            <Button x:Name="LoginButton" Text="Login" BackgroundColor="{StaticResource Primary}" TextColor="{StaticResource FontColorWhite}" Clicked="LoginButton_Clicked"/>
+            <Button x:Name="RegisterButton" Text="Register" BackgroundColor="{StaticResource Primary}" TextColor="{StaticResource FontColorWhite}" Clicked="RegisterButton_Clicked"/>
         </StackLayout>
     </StackLayout>
 

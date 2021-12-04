@@ -5,19 +5,19 @@
     <ContentPage.Content>
         <Grid Margin="10" RowSpacing="0" ColumnSpacing="0">
             <Grid.RowDefinitions>
-                <RowDefinition Height="300"/>
-                <RowDefinition Height="300"/>
+                <RowDefinition Height="210"/>
+                <RowDefinition Height="210"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <StackLayout Grid.Column="0" Grid.Row="0" BackgroundColor="#8B4BFF" Margin="0,60,0,40">
-                <Button HorizontalOptions="FillAndExpand" Text="NewsPart" x:Name="NewsButton" BackgroundColor="#8B4BFF" TextColor="#ffff" VerticalOptions="FillAndExpand"/>
+            <StackLayout Grid.Column="0" Grid.Row="0" BackgroundColor="{StaticResource Primary}" Margin="0,15,0,15">
+                <Button HorizontalOptions="FillAndExpand" Text="NewsPart" x:Name="NewsButton" BackgroundColor="{StaticResource Primary}" TextColor="{StaticResource FontColorWhite}" VerticalOptions="FillAndExpand"/>
             </StackLayout>
 
-            <StackLayout Grid.Column="0" Grid.Row="1" BackgroundColor="#8B4BFF" Margin="0,60,0,40" >
-                <Button HorizontalOptions="FillAndExpand" Text="UpcommingPopsPart" x:Name="UpcommingPopsButton" BackgroundColor="#8B4BFF" TextColor="#ffff" VerticalOptions="FillAndExpand"/>
+            <StackLayout Grid.Column="0" Grid.Row="1" BackgroundColor="{StaticResource Primary}" Margin="0,15,0,15" >
+                <Button HorizontalOptions="FillAndExpand" Text="UpcommingPopsPart" x:Name="UpcommingPopsButton" BackgroundColor="{StaticResource Primary}" TextColor="{StaticResource FontColorWhite}" VerticalOptions="FillAndExpand"/>
             </StackLayout>
         </Grid>
     </ContentPage.Content>

@@ -21,10 +21,9 @@ namespace Poplection
         {
             bool isUsernameEmpty = string.IsNullOrEmpty(UsernameInput.Text);
             bool isPasswordEmpty = string.IsNullOrEmpty(PasswordInput.Text);
-
             if (isUsernameEmpty || isPasswordEmpty)
             {
-                Application.Current.MainPage.DisplayAlert("Missing Info", "you have to fill in all forms", "Accept");
+                Application.Current.MainPage.DisplayAlert("Missing Info", "You have to fill in all input fields", "Accept");
             }
             else
             {

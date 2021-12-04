@@ -3,9 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Poplection.MyAccount">
     <ContentPage.Content>
-        <StackLayout Margin="20, 0">
-            <Frame BackgroundColor="#8B4BFF" Padding="24" CornerRadius="0">
-                <Label Text="My Account" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        <StackLayout>
+            <Frame BackgroundColor="{StaticResource Primary}" Padding="24" CornerRadius="0">
+                <Label Text="My Account" HorizontalTextAlignment="Center" TextColor="{StaticResource FontColorWhite}" FontSize="36"/>
             </Frame>
 
             <StackLayout HorizontalOptions="Center">
@@ -14,8 +14,8 @@
                 <Label x:Name="EditPasswordLabel" Text="Password:"/>
                 <Entry x:Name="EditPasswordInput" Placeholder="Current Password" IsPassword="true"/>
                 <Label x:Name="EditImageUploadLabel" Text="Profile Picture:"/>
-                <Button x:Name="EditImageUploadButton" Text="Upload" BackgroundColor="#8B4BFF" TextColor="White"/>
-                <Button x:Name="SaveButton" Text="Save" BackgroundColor="#8B4BFF" TextColor="White" Clicked="SaveButton_Clicked"/>
+                <Button x:Name="EditImageUploadButton" Text="Upload" BackgroundColor="{StaticResource Primary}" TextColor="White"/>
+                <Button x:Name="SaveButton" Text="Save" BackgroundColor="{StaticResource Primary}" TextColor="{StaticResource FontColorWhite}" Clicked="SaveButton_Clicked"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
