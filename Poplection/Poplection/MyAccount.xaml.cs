@@ -31,5 +31,10 @@ namespace Poplection
                 Navigation.PushAsync(new HomePage());
             }
         }
+
+        private void AllAccountsButton_Clicked(object sender, EventArgs e)
+        {    
+            Navigation.PushAsync(new ViewAccounts());   
+        }
     }
 }
