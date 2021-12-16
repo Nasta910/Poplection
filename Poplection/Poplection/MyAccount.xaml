@@ -2,12 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Poplection.MyAccount">
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <Label  FontSize="36" Text="Register" TextColor="{StaticResource FontColorWhite}" VerticalTextAlignment="Center" Margin="45,0,0,0" />
+        </StackLayout>
+    </NavigationPage.TitleView>
     <ContentPage.Content>
         <StackLayout>
-            <Frame BackgroundColor="{StaticResource Primary}" Padding="24" CornerRadius="0">
-                <Label Text="My Account" HorizontalTextAlignment="Center" TextColor="{StaticResource FontColorWhite}" FontSize="36"/>
-            </Frame>
-
             <StackLayout HorizontalOptions="Center">
                 <Label x:Name="EditUsernameLabel" Text="Username:"/>
                 <Entry x:Name="EditUsernameInput" Placeholder="Current Username"/>

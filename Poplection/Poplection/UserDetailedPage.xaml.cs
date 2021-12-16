@@ -23,6 +23,7 @@ namespace Poplection
             UserIDLabel.Text = user.UserID.ToString();
             UserNameInput.Text = user.UserName;
             UserPasswordInput.Text = user.Password;
+            UserProfileImageNameLabel.Text = user.ProfileImage;
         }
 
         private void UpdateUserButton_Clicked(object sender, EventArgs e)

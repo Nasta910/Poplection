@@ -9,6 +9,7 @@
             <Entry x:Name="UserNameInput"/>
             <Label x:Name="UserPasswordLabel" Text="Password"/>
             <Entry x:Name="UserPasswordInput"/>
+            <Label x:Name="UserProfileImageNameLabel" Text="Img"/>
             
             <StackLayout Orientation="Horizontal">
                 <Button x:Name="UpdateUserButton" Text="Update" Clicked="UpdateUserButton_Clicked"/>

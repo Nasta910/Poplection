@@ -2,22 +2,27 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Poplection.RegisterPage">
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <Label  FontSize="36" Text="Register" TextColor="{StaticResource FontColorWhite}" VerticalTextAlignment="Center" Margin="65,0,0,0" />
+        </StackLayout>
+    </NavigationPage.TitleView>
     <ContentPage.Content>
         <StackLayout>
-            <Frame BackgroundColor="{StaticResource Primary}" Padding="24" CornerRadius="0">
-                <Label Text="Register" HorizontalTextAlignment="Center" TextColor="{StaticResource Primary}" FontSize="36"/>
-            </Frame>
-
-            <StackLayout HorizontalOptions="Center">
-                <Image x:Name="MainPageLogo"  Source="https://upload.wikimedia.org/wikipedia/en/thumb/c/cc/Funko.svg/1200px-Funko.svg.png" WidthRequest="200"></Image>
-                <Label x:Name="UsernameLabel" Text="Username:"/>
-                <Entry x:Name="UsernameInput" Placeholder="Your username here"/>
-                <Label x:Name="PasswordLabel" Text="Password:"/>
-                <Entry x:Name="PasswordInput" Placeholder="Your Password here" IsPassword="true"/>
-                <Label x:Name="ImageUploadLabel" Text="Profile Picture:"/>
-                <Button x:Name="ImageUploadButton" Text="Upload" BackgroundColor="{StaticResource Primary}" TextColor="{StaticResource FontColorWhite}"/>
-                <Button x:Name="RegisterButton" Text="Login" BackgroundColor="{StaticResource Primary}" TextColor="{StaticResource FontColorWhite}" Clicked="RegisterButton_Clicked"/>
-            </StackLayout>
+            <ScrollView>
+                <StackLayout HorizontalOptions="Center">
+                    <Image x:Name="MainPageLogo"  Source="https://upload.wikimedia.org/wikipedia/en/thumb/c/cc/Funko.svg/1200px-Funko.svg.png" WidthRequest="200"></Image>
+                    <Label x:Name="UsernameLabel" Text="Username:"/>
+                    <Entry x:Name="UsernameInput" Placeholder="Your username here"/>
+                    <Label x:Name="PasswordLabel" Text="Password:"/>
+                    <Entry x:Name="PasswordInput" Placeholder="Your Password here" IsPassword="true"/>
+                    <Label x:Name="ImageUploadLabel" Text="Profile Picture:"/>
+                    <Button x:Name="ImageUploadButton" Text="Upload" BackgroundColor="{StaticResource Primary}" TextColor="{StaticResource FontColorWhite}" Clicked="ImageUploadButton_Clicked"/>
+                    <Button x:Name="RegisterButton" Text="Login" BackgroundColor="{StaticResource Primary}" TextColor="{StaticResource FontColorWhite}" Clicked="RegisterButton_Clicked"/>
+                    <Image x:Name="ProfilePicPreviewImage"/>
+                </StackLayout>
+            </ScrollView>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
