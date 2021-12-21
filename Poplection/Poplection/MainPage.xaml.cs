@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Poplection.Models;
+using SQLite;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -10,6 +12,8 @@ namespace Poplection
 {
     public partial class MainPage : ContentPage
     {
+        private object sQLiteConnection;
+
         public MainPage()
         {
             InitializeComponent();
@@ -20,6 +24,8 @@ namespace Poplection
         {
             bool isUsernameEmpty = string.IsNullOrEmpty(UsernameInput.Text);
             bool isPasswordEmpty = string.IsNullOrEmpty(PasswordInput.Text);
+            bool CorrectLoginDetails = false;
+            string LoggedInUsername = "";
 
             if (isUsernameEmpty || isPasswordEmpty)
             {
@@ -27,7 +33,27 @@ namespace Poplection
             }
             else
             {
-                Navigation.PushAsync(new HomePage());
+                using (SQLiteConnection sQLiteConnection = new SQLiteConnection(App.DatabaseLocation))
+                {
+                    sQLiteConnection.CreateTable<User>();
+                    var Users = sQLiteConnection.Table<User>().ToList();
+                    
+                    foreach (User user in Users)
+                    {
+                        if(user.UserName == UsernameInput.Text && user.Password == PasswordInput.Text){
+                            CorrectLoginDetails = true;
+                            LoggedInUsername = user.UserName;
+                        }
+                    }
+                }
+                if (CorrectLoginDetails)
+                {
+                    Navigation.PushAsync(new HomePage());
+                }
+                else
+                {
+                    Application.Current.MainPage.DisplayAlert("Incorrect Info", "Your Username or Password is incorrect!", "Accept");
+                }
             }
         }
 

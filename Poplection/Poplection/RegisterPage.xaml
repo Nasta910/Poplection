@@ -18,7 +18,7 @@
                     <Entry x:Name="PasswordInput" Placeholder="Your Password here" IsPassword="true"/>
                     <Label x:Name="ImageUploadLabel" Text="Profile Picture:"/>
                     <Button x:Name="ImageUploadButton" Text="Upload" BackgroundColor="{StaticResource Primary}" TextColor="{StaticResource FontColorWhite}" Clicked="ImageUploadButton_Clicked"/>
-                    <Button x:Name="RegisterButton" Text="Login" BackgroundColor="{StaticResource Primary}" TextColor="{StaticResource FontColorWhite}" Clicked="RegisterButton_Clicked"/>
+                    <Button x:Name="RegisterButton" Text="Register" BackgroundColor="{StaticResource Primary}" TextColor="{StaticResource FontColorWhite}" Clicked="RegisterButton_Clicked"/>
                     <Image x:Name="ProfilePicPreviewImage"/>
                 </StackLayout>
             </ScrollView>

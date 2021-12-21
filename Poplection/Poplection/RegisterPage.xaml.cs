@@ -43,7 +43,7 @@ namespace Poplection
             else
             {
                 Application.Current.MainPage.DisplayAlert("Done", "Your account has been created", "Accept");
-                Navigation.PushAsync(new HomePage());
+                Navigation.PushAsync(new MainPage());
             }
         }
 
