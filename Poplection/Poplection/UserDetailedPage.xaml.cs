@@ -23,7 +23,8 @@ namespace Poplection
             UserIDLabel.Text = user.UserID.ToString();
             UserNameInput.Text = user.UserName;
             UserPasswordInput.Text = user.Password;
-            UserProfileImageNameLabel.Text = user.ProfileImage;
+            UserProfileImageURLInput.Text = user.ProfileImage;
+            ProfilePicImage.Source = user.ProfileImage;
         }
 
         private void UpdateUserButton_Clicked(object sender, EventArgs e)
@@ -31,7 +32,7 @@ namespace Poplection
             int updatedRows;
             user.UserName = UserNameInput.Text;
             user.Password = UserPasswordInput.Text;
-
+            user.ProfileImage = UserProfileImageURLInput.Text;
             using (SQLiteConnection sQLiteConnection = new SQLiteConnection(App.DatabaseLocation))
             {
                 sQLiteConnection.CreateTable<User>();

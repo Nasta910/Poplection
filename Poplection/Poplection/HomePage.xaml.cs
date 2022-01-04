@@ -12,9 +12,11 @@ namespace Poplection
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class HomePage : TabbedPage
     {
+        
         public HomePage()
         {
             InitializeComponent();
+            AccountToolbarItem.Text = GlobalVariables.LoggedInUser.UserName;
         }
 
         private void AccountToolbarItem_Clicked(object sender, EventArgs e)

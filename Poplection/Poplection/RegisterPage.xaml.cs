@@ -3,7 +3,9 @@ using Poplection.Models;
 using SQLite;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
@@ -16,7 +18,6 @@ namespace Poplection
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RegisterPage : ContentPage
     {
-        public string ProfileImageName = "PlaceholderProfilePic.png";
         public RegisterPage()
         {
             InitializeComponent();
@@ -27,7 +28,7 @@ namespace Poplection
             User user = new User();
             user.UserName = UsernameInput.Text;
             user.Password = PasswordInput.Text;
-            user.ProfileImage = ProfileImageName;
+            user.ProfileImage = ImageURLInput.Text;
 
 
 
@@ -46,21 +47,21 @@ namespace Poplection
                 Navigation.PushAsync(new MainPage());
             }
         }
+        
+        //async void ImageUploadButton_Clicked(System.Object sender, System.EventArgs e)
+        //{
+        //    var result = await MediaPicker.PickPhotoAsync(new MediaPickerOptions
+        //    {
+        //        Title = "Please pick a profile picture"
+        //    });
 
-        async void ImageUploadButton_Clicked(System.Object sender, System.EventArgs e)
-        {
-            var result = await MediaPicker.PickPhotoAsync(new MediaPickerOptions
-            {
-                Title = "Please pick a profile picture"
-            });
+        //    var stream = await result.OpenReadAsync();
+        //    ProfileImageName = result.FileName;
 
-            var stream = await result.OpenReadAsync();
-            ProfileImageName = result.FileName;
+        //    //await MediaGallery.SaveAsync(MediaFileType.Image, await
+        //    //    result.OpenReadAsync(), ProfileImageName);
 
-            //await MediaGallery.SaveAsync(MediaFileType.Image, await
-            //    result.OpenReadAsync(), ProfileImageName);
-
-            ProfilePicPreviewImage.Source = ImageSource.FromStream(() => stream);
-        }
+        //    ProfilePicPreviewImage.Source = ImageSource.FromStream(() => stream);
+        //}
     }
 }

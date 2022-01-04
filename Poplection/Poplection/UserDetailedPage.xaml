@@ -9,8 +9,9 @@
             <Entry x:Name="UserNameInput"/>
             <Label x:Name="UserPasswordLabel" Text="Password"/>
             <Entry x:Name="UserPasswordInput"/>
-            <Label x:Name="UserProfileImageNameLabel" Text="Img"/>
-            
+            <Label x:Name="UserProfileImageURLLabel" Text="url"/>
+            <Entry x:Name="UserProfileImageURLInput"/>
+            <Image x:Name="ProfilePicImage"/>
             <StackLayout Orientation="Horizontal">
                 <Button x:Name="UpdateUserButton" Text="Update" Clicked="UpdateUserButton_Clicked"/>
                 <Button x:Name="DeleteUserButton" Text="Delete" Clicked="DeleteUserButton_Clicked"/>

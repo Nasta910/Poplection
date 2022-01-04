@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Poplection.AddNewPop"
+             xmlns:local="clr-namespace:Poplection;assembly=Poplection">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center" WidthRequest="200">
+            <Label x:Name="PopNameLabel" Text="PopName:"/>
+            <Entry x:Name="PopNameInput" Placeholder="PopName"/>
+            <Label x:Name="PopNumberLabel" Text="Number:"/>
+            <Entry x:Name="PopNumberInput" Keyboard="Numeric" Placeholder="#">
+                <Entry.Behaviors>
+                    <local:NumericValidationBehavior />
+                </Entry.Behaviors>
+            </Entry>
+            <Label x:Name="SetNameLabel" Text="Set Name"/>
+            <Picker x:Name="SetNamePicker"/>
+            <Label x:Name="PopImageURLLabel" Text="Image URL"/>
+            <Entry x:Name="PopImageURLInput"/>
+            <Button x:Name="AddNewPopButton" Text="Add pop" BackgroundColor="{StaticResource Primary}" TextColor="{StaticResource FontColorWhite}" Clicked="AddNewPopButton_Clicked"/>
+            <Button x:Name="AllpopsButton" Text="All Pops" BackgroundColor="{StaticResource Primary}" TextColor="{StaticResource FontColorWhite}" Clicked="AllpopsButton_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

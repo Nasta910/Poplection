@@ -7,15 +7,15 @@
             BarTextColor="{StaticResource FontColorWhite}">
   <!--Pages can be added as references or inline-->
     <local:Home Title="Home"/>
-    <local:MyCollection Title="My Collection"/>
+    <local:MyCollection Title="My Pops"/>
     <local:Stores Title="Stores"/>
     <local:Sets Title="Sets"/> 
     <local:MyOrders Title="My Orders"/>
-    <local:Friends Title="Friends"/>
+    <!--<local:Friends Title="Friends"/>-->
 
     <TabbedPage.ToolbarItems>
-        <ToolbarItem Name="AccountToolbarTitle" Order="Primary" Text="" Priority="1"/>
-        <ToolbarItem Name="AccountToolbarItem" Order="Primary" Text="Username" Priority="4" Clicked="AccountToolbarItem_Clicked"/>
+        <ToolbarItem x:Name="AccountToolbarTitle" Order="Primary" Text="" Priority="1"/>
+        <ToolbarItem x:Name="AccountToolbarItem" Order="Primary" Text="Username" Priority="4" Clicked="AccountToolbarItem_Clicked"/>
     </TabbedPage.ToolbarItems>
 
     

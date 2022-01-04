@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Poplection.AddNewStore">
+    <ContentPage.Content>
+        <StackLayout WidthRequest="200" HorizontalOptions="Center">
+            <Label x:Name="StoreNameLabel" Text="Storename:"/>
+            <Entry x:Name="StoreNameInput" Placeholder="Storename"/>
+            <Label x:Name="StoreURLLabel" Text="Store URL:"/>
+            <Entry x:Name="StoreURLInput"/>
+            <Label x:Name="StoreImageURLLabel" Text="Image URL:"/>
+            <Entry x:Name="StoreImageURLInput"/>
+            <Button x:Name="AddStoreButton" Text="Add" BackgroundColor="{StaticResource Primary}" TextColor="{StaticResource FontColorWhite}" Clicked="AddStoreButton_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

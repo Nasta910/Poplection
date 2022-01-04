@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Poplection.AddPopToCollection">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center" WidthRequest="200">
+            <Label x:Name="PopNameLabelToCollection" Text="PopName:"/>
+            <Picker x:Name="PopNamePicker"/>
+            <Label x:Name="PopPriceLabel" Text="Price:"/>
+            <Entry x:Name="PopPriceInput" Placeholder="€"/>
+            <Label x:Name="ShippingPriceLabel" Text="Price:"/>
+            <Entry x:Name="ShippingPriceInput" Placeholder="€"/>
+            <Label x:Name="OrderDateLabel" Text="Date:"/>
+            <DatePicker x:Name="OrderDateInput"/>
+            <Label x:Name="PopDeliveredLabel" Text="Pop Delivered:"/>
+            <Picker x:Name="PopDeliveredPicker"/>
+            <Label x:Name="PopNameLabel" Text="Pop Protected:"/>
+            <Picker x:Name="PopProtectedPicker"/>
+            <Button x:Name="AddPopToCollectionButton" Text="Add pop" BackgroundColor="{StaticResource Primary}" TextColor="{StaticResource FontColorWhite}" Clicked="AddPopToCollectionButton_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Poplection.Models;
+using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +17,18 @@ namespace Poplection
         public Stores()
         {
             InitializeComponent();
+
+            using (SQLiteConnection sQLiteConnection = new SQLiteConnection(App.DatabaseLocation))
+            {
+                sQLiteConnection.CreateTable<Store>();
+                var Stores = sQLiteConnection.Table<Store>().ToList();
+                StoresListView.ItemsSource = Stores;
+            }
+        }
+
+        private void AddNewStoreButton_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new AddNewStore());
         }
     }
 }

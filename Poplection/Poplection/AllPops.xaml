@@ -1,18 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Poplection.MyCollection">
+             x:Class="Poplection.AllPops">
     <ContentPage.Content>
         <StackLayout>
             <StackLayout>
                 <Button Margin="0,5,0,0" x:Name="AddNewPopButton" Text="New" BackgroundColor="{StaticResource Primary}" TextColor="{StaticResource FontColorWhite}" Clicked="AddNewPopButton_Clicked"/>
-                <Button x:Name="AddPopToCollectionButton" Text="Add" BackgroundColor="{StaticResource Primary}" TextColor="{StaticResource FontColorWhite}" Clicked="AddPopToCollectionButton_Clicked"/>
             </StackLayout>
             <StackLayout>
-                <ListView x:Name="PopsCollectionListView" ItemSelected="PopsCollectionListView_ItemSelected">
+                <ListView x:Name="AllPopsListView" >
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <ImageCell  ImageSource="{Binding PopImage}" Text="{Binding PopName}" TextColor="{StaticResource Primary}"/>
+                            <ViewCell>
+                                <Grid>
+                                    <Image Source="{Binding PopImage}"/>
+                                    <Label Grid.Column="1" Text="{Binding PopName}" />
+                                    <Label x:Name="SetName" Grid.Column="2" Text="{Binding SetID}" HorizontalTextAlignment="End" />
+                                </Grid>
+                            </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>

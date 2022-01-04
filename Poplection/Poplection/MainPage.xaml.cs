@@ -12,8 +12,6 @@ namespace Poplection
 {
     public partial class MainPage : ContentPage
     {
-        private object sQLiteConnection;
-
         public MainPage()
         {
             InitializeComponent();
@@ -25,7 +23,8 @@ namespace Poplection
             bool isUsernameEmpty = string.IsNullOrEmpty(UsernameInput.Text);
             bool isPasswordEmpty = string.IsNullOrEmpty(PasswordInput.Text);
             bool CorrectLoginDetails = false;
-            string LoggedInUsername = "";
+
+            int ValueLoggedInUserID = 999;
 
             if (isUsernameEmpty || isPasswordEmpty)
             {
@@ -42,12 +41,13 @@ namespace Poplection
                     {
                         if(user.UserName == UsernameInput.Text && user.Password == PasswordInput.Text){
                             CorrectLoginDetails = true;
-                            LoggedInUsername = user.UserName;
+                            ValueLoggedInUserID = user.UserID;
                         }
                     }
                 }
                 if (CorrectLoginDetails)
                 {
+                    GlobalVariables.LoggedInUser = GetUser(ValueLoggedInUserID);
                     Navigation.PushAsync(new HomePage());
                 }
                 else
@@ -61,6 +61,25 @@ namespace Poplection
         {
             Navigation.PushAsync(new RegisterPage());
             
+        }
+
+        public User GetUser(int LoggedInUserID)
+        {
+            User LoggedInUser = null;
+            using (SQLiteConnection sQLiteConnection = new SQLiteConnection(App.DatabaseLocation))
+            {
+                sQLiteConnection.CreateTable<User>();
+                var Users = sQLiteConnection.Table<User>().ToList();
+                foreach (User user in Users)
+                {
+                    if (LoggedInUserID == user.UserID)
+                    {
+                        LoggedInUser = user;
+                    }
+                }
+
+            }
+            return LoggedInUser;
         }
 
     }

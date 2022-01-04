@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Poplection.Models;
+using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,25 +11,41 @@ using Xamarin.Forms.Xaml;
 
 namespace Poplection
 {
+    
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MyAccount : ContentPage
     {
+        User user;
         public MyAccount()
         {
             InitializeComponent();
+            user = GlobalVariables.LoggedInUser;
+            UsernameInput.Text = user.UserName;
+            PasswordInput.Text = user.Password;
+            UserProfileImageURLInput.Text = user.ProfileImage;
+            ProfilePicImage.Source = user.ProfileImage;
         }
 
-        private void SaveButton_Clicked(object sender, EventArgs e)
+        public void SaveButton_Clicked(object sender, EventArgs e)
         {
-            bool isUsernameEmpty = string.IsNullOrEmpty(EditUsernameInput.Text);
-            bool isPasswordEmpty = string.IsNullOrEmpty(EditPasswordInput.Text);
+            int updatedRows;
+            user.UserName = UsernameInput.Text;
+            user.Password = PasswordInput.Text;
+            user.ProfileImage = UserProfileImageURLInput.Text;
+            using (SQLiteConnection sQLiteConnection = new SQLiteConnection(App.DatabaseLocation))
+            {
+                sQLiteConnection.CreateTable<User>();
+                updatedRows = sQLiteConnection.Update(user);
+            }
 
-            if (isUsernameEmpty || isPasswordEmpty)
+            if (updatedRows < 0)
             {
                 Application.Current.MainPage.DisplayAlert("Missing Info", "You have to fill in all input fields", "Accept");
             }
             else
             {
+                Application.Current.MainPage.DisplayAlert("Done", "Your account has been Updated", "Accept");
+                GlobalVariables.LoggedInUser = user;
                 Navigation.PushAsync(new HomePage());
             }
         }

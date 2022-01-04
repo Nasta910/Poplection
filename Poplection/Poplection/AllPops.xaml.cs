@@ -12,23 +12,24 @@ using Xamarin.Forms.Xaml;
 namespace Poplection
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Sets : ContentPage
+    public partial class AllPops : ContentPage
     {
-        public Sets()
+        public AllPops()
         {
             InitializeComponent();
-
+            
             using (SQLiteConnection sQLiteConnection = new SQLiteConnection(App.DatabaseLocation))
             {
-                sQLiteConnection.CreateTable<Set>();
-                var Sets = sQLiteConnection.Table<Set>().ToList();
-                SetsListView.ItemsSource = Sets;
+                sQLiteConnection.CreateTable<Pop>();
+                var Pops = sQLiteConnection.Table<Pop>().ToList();
+                AllPopsListView.ItemsSource = Pops;
             }
-        }
 
-        private void AddNewSetButton_Clicked(object sender, EventArgs e)
+            
+        }
+        private void AddNewPopButton_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new AddNewSet());
+            Navigation.PushAsync(new AddNewPop());
         }
     }
 }

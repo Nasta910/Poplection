@@ -16,7 +16,7 @@ namespace Poplection.Models
         [MaxLength(50)]
         public string Password { get; set; }
 
-        [MaxLength(100)]
+        [MaxLength(500)]
         public string ProfileImage { get; set; }
 
     }

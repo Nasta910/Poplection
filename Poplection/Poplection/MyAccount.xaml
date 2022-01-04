@@ -4,18 +4,19 @@
              x:Class="Poplection.MyAccount">
     <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal">
-            <Label  FontSize="36" Text="Register" TextColor="{StaticResource FontColorWhite}" VerticalTextAlignment="Center" Margin="45,0,0,0" />
+            <Label  FontSize="36" Text="Account" TextColor="{StaticResource FontColorWhite}" VerticalTextAlignment="Center" Margin="65,0,0,0" />
         </StackLayout>
     </NavigationPage.TitleView>
     <ContentPage.Content>
         <StackLayout>
             <StackLayout HorizontalOptions="Center">
-                <Label x:Name="EditUsernameLabel" Text="Username:"/>
-                <Entry x:Name="EditUsernameInput" Placeholder="Current Username"/>
-                <Label x:Name="EditPasswordLabel" Text="Password:"/>
-                <Entry x:Name="EditPasswordInput" Placeholder="Current Password" IsPassword="true"/>
-                <Label x:Name="EditImageUploadLabel" Text="Profile Picture:"/>
-                <Button x:Name="EditImageUploadButton" Text="Upload" BackgroundColor="{StaticResource Primary}" TextColor="White"/>
+                <Image x:Name="ProfilePicImage" Source="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png" HeightRequest="250"/>
+                <Label x:Name="UsernameLabel" Text="Username:"/>
+                <Entry x:Name="UsernameInput" Placeholder="Current Username"/>
+                <Label x:Name="PasswordLabel" Text="Password:"/>
+                <Entry x:Name="PasswordInput" Placeholder="Current Password" IsPassword="true"/>
+                <Label x:Name="UserProfileImageURLLabel" Text="url"/>
+                <Entry x:Name="UserProfileImageURLInput"/>
                 <Button x:Name="SaveButton" Text="Save" BackgroundColor="{StaticResource Primary}" TextColor="{StaticResource FontColorWhite}" Clicked="SaveButton_Clicked"/>
                 <Button x:Name="AllAccountsButton" Text="All Accounts" BackgroundColor="{StaticResource Primary}" TextColor="{StaticResource FontColorWhite}" Clicked="AllAccountsButton_Clicked"/>
             </StackLayout>
