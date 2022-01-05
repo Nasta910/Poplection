@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Poplection.Models
 {
-    class PopsToUser
+    public class PopsToUser
     {
         [PrimaryKey, AutoIncrement]
         public int PopToCollectionID { get; set; }
@@ -13,6 +13,8 @@ namespace Poplection.Models
         public int PopID { get; set; }
 
         public int UserID { get; set; }
+        
+        public int StoreID { get; set; }
 
         public float PopPrice { get; set; }
 

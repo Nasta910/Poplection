@@ -8,8 +8,10 @@
             <Picker x:Name="PopNamePicker"/>
             <Label x:Name="PopPriceLabel" Text="Price:"/>
             <Entry x:Name="PopPriceInput" Placeholder="€"/>
-            <Label x:Name="ShippingPriceLabel" Text="Price:"/>
+            <Label x:Name="ShippingPriceLabel" Text="Shipping Costs:"/>
             <Entry x:Name="ShippingPriceInput" Placeholder="€"/>
+            <Label x:Name="StoreNameLabel" Text="Store Name"/>
+            <Picker x:Name="StoreNamePicker"/>
             <Label x:Name="OrderDateLabel" Text="Date:"/>
             <DatePicker x:Name="OrderDateInput"/>
             <Label x:Name="PopDeliveredLabel" Text="Pop Delivered:"/>

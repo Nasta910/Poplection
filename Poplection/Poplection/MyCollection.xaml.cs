@@ -62,7 +62,7 @@ namespace Poplection
             var selectedPop = PopsCollectionListView.SelectedItem as Pop;
             if (selectedPop != null)
             {
-                //To do
+                Navigation.PushAsync(new PopFromCollectionDetailedPage(selectedPop));
             }
         }
     }

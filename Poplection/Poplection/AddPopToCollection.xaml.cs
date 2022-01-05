@@ -26,6 +26,14 @@ namespace Poplection
                 {
                     PopNamePicker.Items.Add(pop.PopName);
                 }
+
+                sQLiteConnection.CreateTable<Store>();
+                var Stores = sQLiteConnection.Table<Store>().ToList();
+
+                foreach (Store store in Stores)
+                {
+                    StoreNamePicker.Items.Add(store.StoreName);
+                }
             }
 
             PopDeliveredPicker.Items.Add("Yes");
@@ -50,6 +58,7 @@ namespace Poplection
                 bPickedProtected = true;
             }
             string pickedPopName = PopNamePicker.Items[PopNamePicker.SelectedIndex];
+            string pickedStoreName = StoreNamePicker.Items[StoreNamePicker.SelectedIndex];
             using (SQLiteConnection sQLiteConnection = new SQLiteConnection(App.DatabaseLocation))
             {
                 sQLiteConnection.CreateTable<Pop>();
@@ -60,6 +69,17 @@ namespace Poplection
                     if (pop.PopName == pickedPopName)
                     {
                         PopToUser.PopID = pop.PopID;
+                    }
+                }
+
+                sQLiteConnection.CreateTable<Store>();
+                var Stores = sQLiteConnection.Table<Store>().ToList();
+
+                foreach (Store store in Stores)
+                {
+                    if (store.StoreName == pickedStoreName)
+                    {
+                        PopToUser.StoreID = store.StoreID;
                     }
                 }
             }
