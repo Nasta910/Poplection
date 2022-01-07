@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Poplection.Models
 {
-    class Set
+    public class Set
     {
         [PrimaryKey, AutoIncrement]
         public int SetID { get; set; }

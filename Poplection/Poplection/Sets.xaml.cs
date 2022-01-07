@@ -18,6 +18,12 @@ namespace Poplection
         {
             InitializeComponent();
 
+            
+        }
+
+        protected override void OnAppearing()
+        {
+            //Write the code of your page here
             using (SQLiteConnection sQLiteConnection = new SQLiteConnection(App.DatabaseLocation))
             {
                 sQLiteConnection.CreateTable<Set>();
@@ -29,6 +35,15 @@ namespace Poplection
         private void AddNewSetButton_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new AddNewSet());
+        }
+
+        private void SetsListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var selectedSet = SetsListView.SelectedItem as Set;
+            if (selectedSet != null)
+            {
+                Navigation.PushAsync(new SetDetailedPage(selectedSet));
+            }
         }
     }
 }

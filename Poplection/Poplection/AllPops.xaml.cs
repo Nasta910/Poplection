@@ -16,20 +16,24 @@ namespace Poplection
     {
         public AllPops()
         {
-            InitializeComponent();
-            
+            InitializeComponent();      
+        }
+
+        protected override void OnAppearing()
+        {
+            //Write the code of your page here
+            base.OnAppearing();
             using (SQLiteConnection sQLiteConnection = new SQLiteConnection(App.DatabaseLocation))
             {
                 sQLiteConnection.CreateTable<Pop>();
                 var Pops = sQLiteConnection.Table<Pop>().ToList();
                 AllPopsListView.ItemsSource = Pops;
             }
-
-            
         }
+
         private void AddNewPopButton_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new AddNewPop());
+            Navigation.PushAsync(new AddNewPop("AllPops"));
         }
     }
 }

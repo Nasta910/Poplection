@@ -17,15 +17,22 @@ namespace Poplection
         public MyCollection()
         {
             InitializeComponent();
+            
+        }
+
+        protected override void OnAppearing()
+        {
+            //Write the code of your page here
+            base.OnAppearing();
             List<int> AllOwnedPopsID = new List<int>();
             List<Pop> PopsInCollection = new List<Pop>();
             using (SQLiteConnection sQLiteConnection = new SQLiteConnection(App.DatabaseLocation))
             {
                 sQLiteConnection.CreateTable<PopsToUser>();
                 var Pops = sQLiteConnection.Table<PopsToUser>().ToList();
-                foreach(PopsToUser pop in Pops)
+                foreach (PopsToUser pop in Pops)
                 {
-                    if(pop.UserID == GlobalVariables.LoggedInUser.UserID)
+                    if (pop.UserID == GlobalVariables.LoggedInUser.UserID)
                     {
                         AllOwnedPopsID.Add(pop.PopID);
                     }
@@ -33,10 +40,10 @@ namespace Poplection
             }
             using (SQLiteConnection sQLiteConnection = new SQLiteConnection(App.DatabaseLocation))
             {
-                
+
                 sQLiteConnection.CreateTable<Pop>();
                 var Pops = sQLiteConnection.Table<Pop>().ToList();
-                foreach(Pop pop in Pops)
+                foreach (Pop pop in Pops)
                 {
                     if (AllOwnedPopsID.Contains(pop.PopID))
                     {
@@ -49,12 +56,12 @@ namespace Poplection
 
         private void AddNewPopButton_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new AddNewPop());
+            Navigation.PushAsync(new AddNewPop("MyCollection"));
         }
 
         private void AddPopToCollectionButton_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new AddPopToCollection());
+            Navigation.PushAsync(new AddPopToCollection("MyCollection"));
         }
 
         private void PopsCollectionListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -62,7 +69,7 @@ namespace Poplection
             var selectedPop = PopsCollectionListView.SelectedItem as Pop;
             if (selectedPop != null)
             {
-                Navigation.PushAsync(new PopFromCollectionDetailedPage(selectedPop));
+                Navigation.PushAsync(new PopFromCollectionDetailedPage(selectedPop, "MyCollection"));
             }
         }
     }

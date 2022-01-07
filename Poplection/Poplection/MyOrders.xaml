@@ -4,9 +4,19 @@
              x:Class="Poplection.MyOrders">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <StackLayout>
+                <Button Margin="0,5,0,0" x:Name="AddNewPopButton" Text="New" BackgroundColor="{StaticResource Primary}" TextColor="{StaticResource FontColorWhite}" Clicked="AddNewPopButton_Clicked"/>
+                <Button x:Name="AddPopToCollectionButton" Text="Add" BackgroundColor="{StaticResource Primary}" TextColor="{StaticResource FontColorWhite}" Clicked="AddPopToCollectionButton_Clicked"/>
+            </StackLayout>
+            <StackLayout>
+                <ListView x:Name="PopsOrdersListView" ItemSelected="PopsOrdersListView_ItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ImageCell  ImageSource="{Binding PopImage}" Text="{Binding PopName}" TextColor="{StaticResource Primary}"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

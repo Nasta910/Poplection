@@ -14,9 +14,11 @@ namespace Poplection
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AddPopToCollection : ContentPage
     {
-        public AddPopToCollection()
+        string FromWhichPage;
+        public AddPopToCollection(string startPage)
         {
             InitializeComponent();
+            FromWhichPage = startPage;
             using (SQLiteConnection sQLiteConnection = new SQLiteConnection(App.DatabaseLocation))
             {
                 sQLiteConnection.CreateTable<Pop>();
@@ -103,7 +105,15 @@ namespace Poplection
             else
             {
                 Application.Current.MainPage.DisplayAlert("Done", "Your Pop has been added to your collection", "Accept");
-                Navigation.PushAsync(new MyCollection());
+                if(FromWhichPage == "MyOrders")
+                {
+                    Navigation.PushAsync(new MyOrders());
+                }
+                else
+                {
+                    Navigation.PushAsync(new MyCollection());
+                }
+                
             }
         }
     }

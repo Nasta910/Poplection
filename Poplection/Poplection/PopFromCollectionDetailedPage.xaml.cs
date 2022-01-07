@@ -14,6 +14,8 @@ namespace Poplection
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PopFromCollectionDetailedPage : ContentPage
     {
+        string FromWhichPage;
+
         Pop popToEdit;
         PopsToUser PopEdited;
         int SelectedPopID;
@@ -36,9 +38,11 @@ namespace Poplection
         string SelectedStoreName;
 
         int UserID = GlobalVariables.LoggedInUser.UserID;
-        public PopFromCollectionDetailedPage(Pop SelectedPop)
+        public PopFromCollectionDetailedPage(Pop SelectedPop, string startPage)
         {
             InitializeComponent();
+
+            FromWhichPage = startPage;
             popToEdit = SelectedPop;
 
 
@@ -183,7 +187,14 @@ namespace Poplection
             else
             {
                 Application.Current.MainPage.DisplayAlert("Done", "Your pop has been Updated", "Accept");
-                Navigation.PushAsync(new MyCollection());
+                if (FromWhichPage == "MyOrders")
+                {
+                    Navigation.PushAsync(new MyOrders());
+                }
+                else
+                {
+                    Navigation.PushAsync(new MyCollection());
+                }
             }
         }
 

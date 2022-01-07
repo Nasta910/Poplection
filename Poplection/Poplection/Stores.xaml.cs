@@ -17,7 +17,12 @@ namespace Poplection
         public Stores()
         {
             InitializeComponent();
+        }
 
+        protected override void OnAppearing()
+        {
+            //Write the code of your page here
+            base.OnAppearing();
             using (SQLiteConnection sQLiteConnection = new SQLiteConnection(App.DatabaseLocation))
             {
                 sQLiteConnection.CreateTable<Store>();
@@ -29,6 +34,15 @@ namespace Poplection
         private void AddNewStoreButton_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new AddNewStore());
+        }
+
+        private void StoresListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var selectedStore = StoresListView.SelectedItem as Store;
+            if (selectedStore != null)
+            {
+                Navigation.PushAsync(new StoreDetailedPage(selectedStore));
+            }
         }
     }
 }

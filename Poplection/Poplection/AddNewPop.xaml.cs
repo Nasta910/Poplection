@@ -14,9 +14,11 @@ namespace Poplection
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AddNewPop : ContentPage
     {
-        public AddNewPop()
+        string FromWhichPage;
+        public AddNewPop(string startPage)
         {
             InitializeComponent();
+            FromWhichPage = startPage;
             using (SQLiteConnection sQLiteConnection = new SQLiteConnection(App.DatabaseLocation))
             {
                 sQLiteConnection.CreateTable<Set>();
@@ -64,7 +66,18 @@ namespace Poplection
             else
             {
                 Application.Current.MainPage.DisplayAlert("Done", "Your Pop has been Added", "Accept");
-                Navigation.PushAsync(new AllPops());
+                if (FromWhichPage == "MyOrders")
+                {
+                    Navigation.PushAsync(new MyOrders());
+                }
+                else if(FromWhichPage == "AllPops")
+                {
+                    Navigation.PushAsync(new AllPops());
+                }
+                else
+                {
+                    Navigation.PushAsync(new MyCollection());
+                }
             }
         }
 

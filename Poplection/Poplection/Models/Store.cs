@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Poplection.Models
 {
-    class Store
+    public class Store
     {
         [PrimaryKey, AutoIncrement]
         public int StoreID { get; set; }
@@ -16,7 +16,7 @@ namespace Poplection.Models
         [MaxLength(500)]
         public string StoreURL { get; set; }
 
-        [MaxLength(500)]
+        
         public string StoreImage { get; set; }
     }
 }
