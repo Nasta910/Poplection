@@ -23,7 +23,7 @@ namespace Poplection
             bool isUsernameEmpty = string.IsNullOrEmpty(UsernameInput.Text);
             bool isPasswordEmpty = string.IsNullOrEmpty(PasswordInput.Text);
             bool CorrectLoginDetails = false;
-
+            
             int ValueLoggedInUserID = 999;
 
             if (isUsernameEmpty || isPasswordEmpty)

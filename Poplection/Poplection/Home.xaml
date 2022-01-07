@@ -17,8 +17,14 @@
             </StackLayout>
 
             <StackLayout Grid.Column="0" Grid.Row="1" BackgroundColor="{StaticResource Primary}" Margin="0,15,0,15" >
-                <Button HorizontalOptions="FillAndExpand" Text="UpcommingPopsPart" x:Name="UpcommingPopsButton" BackgroundColor="{StaticResource Primary}" TextColor="{StaticResource FontColorWhite}" VerticalOptions="FillAndExpand"/>
+                <Button HorizontalOptions="FillAndExpand" Text="UpcommingPopsPart" x:Name="UpcommingPopsButton" BackgroundColor="{StaticResource Primary}" TextColor="{StaticResource FontColorWhite}" VerticalOptions="FillAndExpand" />
+            </StackLayout>
+
+            <StackLayout Grid.Column="0" Grid.Row="3">
+                <Button x:Name="WeatherButton" Text="Weather" BackgroundColor="{StaticResource Primary}" TextColor="{StaticResource FontColorWhite}" Clicked="ViewWeatherButton_Clicked"/>
             </StackLayout>
         </Grid>
+        
+        
     </ContentPage.Content>
 </ContentPage>
