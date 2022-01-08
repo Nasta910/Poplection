@@ -16,7 +16,7 @@ namespace Poplection.Models
         [MaxLength(500)]
         public string StoreURL { get; set; }
 
-        
+        [MaxLength(500)]
         public string StoreImage { get; set; }
     }
 }
